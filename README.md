@@ -1,16 +1,35 @@
-# pluginapp
+# The GMOD Plugin Directory
 
-First revision of plugin app as found at plugins.dustbunny.io.
+[![Build Status](https://travis-ci.org/erasche/pluginapp.svg?branch=master)](https://travis-ci.org/erasche/pluginapp)
 
-Not included is the nginx configuration that sets up the reverse proxy and serves the static content from public
-which circumvents needing to deal with the mess that is the express static middleware.
+Second revision of JBrowse plugin directory
 
-Also not included is a copy of the mongodb database that stores the plugins.
+## Registering a Plugin
 
-Expect more documentation/comments/refactored code in the near future 
-(the angular of the app is a mess and needs to be redone, but it gets the job done)
+We would love for you to register your plugin! It's really easy to do:
+
+1. Fork this repository.
+2. Edit the [`plugins.yaml`](./plugins.yaml) file, and add your plugin to the
+   end of the list
+3. Submit a pull request to this repo.
+
+## Building
+
+```
+npm install .
+npm run build_api
+npm run build
+```
+
+## Deploying
+
+```
+npm run deploy
+```
+
+## App Structure
 
 Directories:
-app - The node server stuff, mainly used as the api layer for the angular app
-config - configuration for the node server stuff
-public - all the frontend goodies, css, images, the angular app
+
+app - The frontend code, including the HTML page, angular JS code, and the templates.
+app/api - the data that's used by the app
